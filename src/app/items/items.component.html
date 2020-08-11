@@ -1,0 +1,28 @@
+<h1 style="text-align: center; font-family: Metropolis;">HackedRecipe</h1>
+<img src="../../assets/Images/Illustration2.png" alt="No Img" class="img1">
+<div class='content'>
+  <br><br>
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Start searching for Item by Name">
+  </div>
+  <mat-grid-list cols = "4" style="margin-top: 150px;">
+    <mat-grid-tile *ngFor="let item of items| filter:searchText" [colspan]="1" [rowspan]="1">
+      <div class="card card-cascade" style="width: 250px;" routerLink="/{{item.id}}">
+        <div class="view view-cascade overlay">
+           <img class="card-img-top" [src]="item.image" alt="Card image cap" style="height: 200px;">
+       </div>
+          <div class="card-body card-body-cascade text-center">
+          <h6><b>{{item.name}}</b></h6>
+          <h6>{{item.price}}</h6>
+       </div>
+      </div>
+
+
+
+    </mat-grid-tile>
+
+ </mat-grid-list>
+  <img src="../../assets/Images/Illustration1.png" alt="No Img" class="img2">
+  <img src="../../assets/Images/Illustration4.png" alt="No img" class="img3">
+ </div>
+
